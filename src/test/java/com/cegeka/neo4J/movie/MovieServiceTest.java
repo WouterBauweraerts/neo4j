@@ -27,21 +27,13 @@ public class MovieServiceTest {
     @Mock
     private MovieRepository movieRepository;
 
-
-    private MovieService realMovieService = new MovieService();
+    @Autowired
+    private MovieService realMovieService;
 
     @Test
-    public void getMovies_ShouldReturnAllMovies(){
+    public void getMovies_ShouldReturnAllMovies() {
         movieService.getMovies();
         verify(movieRepository).findAll();
-    }
-
-    @Test
-    public void getMovies_ContainsTopGun_Testmapping(){
-        Movie movie = new Movie("Top Gun", "I feel the need, the need for speed.", 1986);
-        List<Movie> movies = new ArrayList<>();
-        realMovieService.getMovies().forEach(movies::add);
-        Assertions.assertThat(movies).contains(movie);
     }
 
 }
