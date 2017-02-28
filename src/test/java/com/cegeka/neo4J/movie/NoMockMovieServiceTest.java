@@ -26,4 +26,10 @@ public class NoMockMovieServiceTest {
         movieService.getMovies().forEach(movies::add);
         Assertions.assertThat(movies).contains(movie);
     }
+
+    @Test
+    public void getMovie_searchForTopGun_EqualsTopGun(){
+        Movie movie = new Movie("Top Gun", "I feel the need, the need for speed.", 1986);
+        Assertions.assertThat(movieService.getMovie("Top Gun")).isEqualTo(movie);
+    }
 }

@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MovieRepository extends GraphRepository<Movie>{
 
+    Movie findByTitle(String title);
 }
