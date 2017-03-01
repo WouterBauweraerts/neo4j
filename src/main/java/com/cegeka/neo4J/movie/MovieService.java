@@ -3,7 +3,6 @@ package com.cegeka.neo4J.movie;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
 public class MovieService {
@@ -17,5 +16,9 @@ public class MovieService {
 
     public Movie getMovie(String title) {
         return movieRepository.findByTitle(title);
+    }
+
+    public Movie getMovieByTagline(String tagline) {
+        return movieRepository.findByTagline(tagline);
     }
 }

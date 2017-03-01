@@ -5,10 +5,7 @@ package com.cegeka.neo4J.controller;
 import com.cegeka.neo4J.movie.Movie;
 import com.cegeka.neo4J.movie.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,11 @@ public class MovieController {
     @RequestMapping(value = "/byTitle", method = RequestMethod.GET)
     public Movie getMovieByTitle(@RequestParam("title")String title){
         return movieService.getMovie(title);
+    }
+
+    @RequestMapping(value = "/byTagline", method = RequestMethod.GET)
+    public Movie getMovieByTagline(@RequestParam("tagline")String tagLine){
+        return movieService.getMovieByTagline(tagLine);
     }
 
 }

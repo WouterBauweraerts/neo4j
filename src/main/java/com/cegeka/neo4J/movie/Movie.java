@@ -8,12 +8,12 @@ public class Movie {
     @GraphId
     private Long movieId;
     private String title;
-    private String tagLine;
+    private String tagline;
     private int released;
 
     public Movie(String title, String tagline, int released) {
         this.title = title;
-        this.tagLine = tagline;
+        this.tagline = tagline;
         this.released = released;
     }
 
@@ -28,8 +28,8 @@ public class Movie {
         return title;
     }
 
-    public String getTagLine() {
-        return tagLine;
+    public String getTagline() {
+        return tagline;
     }
 
     public int getReleased() {
@@ -45,13 +45,13 @@ public class Movie {
 
         if (released != movie.released) return false;
         if (title != null ? !title.equals(movie.title) : movie.title != null) return false;
-        return tagLine != null ? tagLine.equals(movie.tagLine) : movie.tagLine == null;
+        return tagline != null ? tagline.equals(movie.tagline) : movie.tagline == null;
     }
 
     @Override
     public int hashCode() {
         int result = title != null ? title.hashCode() : 0;
-        result = 31 * result + (tagLine != null ? tagLine.hashCode() : 0);
+        result = 31 * result + (tagline != null ? tagline.hashCode() : 0);
         result = 31 * result + released;
         return result;
     }
